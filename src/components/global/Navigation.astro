@@ -2,40 +2,6 @@
   class="justify-center w-full mx-auto bg-gray-100/30 backdrop-blur-3xl border-b text-blue-950 text-xs font-semibold"
 >
   <div
-    x-cloak
-    x-show="showAlert"
-    x-data="{ showAlert: true }"
-    role="alert"
-    class="flex h-12 items-center justify-center bg-gradient-to-t from-blue-500 to-indigo-600 text-white"
-  >
-    <div
-      class="flex items-center justify-between gap-4 w-full px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-screen-xl"
-    >
-      <div class="text-xs font-medium">
-        This is a dismissible banner to anounce features
-      </div>
-      <button
-        @click="showAlert = false"
-        class="underline bg-white/10 ring-1 ring-white/50 text-white focus:bg-white focus:text-blue-700 hover:bg-white hover:text-blue-950 rounded-full p-0.5"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-x w-4 h-4"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M18 6l-12 12"></path>
-          <path d="M6 6l12 12"></path>
-        </svg></button
-      >
-    </div>
-  </div>
-  <div
     x-data="{ open: false }"
     class="flex flex-col w-full px-8 py-2 mx-auto m md:items-center md:justify-between md:flex-row md:px-12 lg:px-32 max-w-screen-xl"
   >
@@ -134,8 +100,8 @@
             </defs>
           </svg>
         </span>
-        Alfred</a
-      ><button
+        DerivaConnect - The Best Service for Sustainable Growth
+      </a><button
         class="rounded-lg md:hidden focus:outline-none focus:shadow-outline"
         @click="open = !open"
         ><svg
@@ -168,19 +134,19 @@
         title="your link title"
         aria-label="your links label"
         class="px-4 py-2 hover:text-blue-500 focus:outline-none focus:shadow-none focus:text-blue-900/90 md:ml-auto"
-        >Overview
+      >
       </a><a
         href="/system/style-guide"
         title="your link title"
         aria-label="your links label"
         class="px-4 py-2 hover:text-blue-500 focus:outline-none focus:shadow-none focus:text-blue-900/90"
-        >Style Guide
+      >
       </a><a
         title="your link title"
         aria-label="your links label"
-        href="https://lexingtonthemes.lemonsqueezy.com/checkout/buy/95522c10-eed2-4620-84ab-5cbd34efc225"
+        href="/forms/contact"
         class="flex items-center justify-center h-8 px-4 py-2 font-semibold text-white transition-all duration-200 rounded-full bg-gradient-to-b from-blue-500 to-indigo-600 hover:to-indigo-700 shadow-button shadow-blue-600/50 focus:ring-2 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
-        >Buy Alfred</a
+        >Contact DerivaConnect Today</a
       >
     </nav>
   </div>
