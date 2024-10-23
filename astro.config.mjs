@@ -17,5 +17,5 @@ export default defineConfig({
     drafts: true
   },
   site: 'https://lexingtonthemes.com',
-  integrations: [tailwind(), sitemap(), mdx(), icon()]
+  integrations: [tailwind(), sitemap(), mdx()]
 });
