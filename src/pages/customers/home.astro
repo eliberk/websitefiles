@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HomeEntries from "../../components/customers/HomeEntries.astro";
-import Chat from "../components/Chat.jsx";
 const allPosts = await getCollection("customers");
 ---
 
@@ -41,5 +40,4 @@ const allPosts = await getCollection("customers");
       </div>
     </div>
   </section>
-  <Chat client:load />
 </BaseLayout>

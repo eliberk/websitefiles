@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Chat from "../components/Chat.jsx";
 import EntriesOne from "@/components/entries/EntriesOne.astro";
 const allPosts = await getCollection("posts");
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
@@ -20,7 +19,6 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
           Read our articles about<span class="md:block">
             fintech and general tech</span
           >
-          <Chat client:load />
         </h1>
         <form
           class="w-full p-2 mt-8 rounded-2xl lg:rounded-full sm:flex mx-auto max-w-sm bg-white shadow-box shadow-gray-500/20"

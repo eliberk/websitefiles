@@ -12,7 +12,6 @@ const {
   author = "DC Group",
 } = Astro.props;
 const sanitizedTitle = title.toLowerCase().replaceAll(" ", "-");
-import Chat from "../components/Chat.jsx";
 ---
 
 <Metas
@@ -46,7 +45,6 @@ import Chat from "../components/Chat.jsx";
   defer
   src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.js"
 ></script>
-<Chat client:load />
 <!---- Keen slider -->
 <!--
   Keen slider CSS if needed
