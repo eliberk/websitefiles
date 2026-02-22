@@ -9,10 +9,11 @@ import FeatureSix from "@/components/features/FeatureSix.astro";
 import FeatureSeven from "@/components/features/FeatureSeven.astro";
 import FeatureEight from "@/components/features/FeatureEight.astro";
 import FeatureNine from "@/components/features/FeatureNine.astro";
-
+import Chat from "../components/Chat.jsx";
 ---
+
 <BaseLayout>
-    <FeatureOne/>
+    <FeatureOne />
     <FeatureTwo />
     <FeatureThree />
     <FeatureFour />
@@ -21,5 +22,5 @@ import FeatureNine from "@/components/features/FeatureNine.astro";
     <FeatureSeven />
     <FeatureEight />
     <FeatureNine />
-
+    <Chat client:load />
 </BaseLayout>

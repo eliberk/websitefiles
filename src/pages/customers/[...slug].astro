@@ -14,8 +14,10 @@ export async function getStaticPaths() {
 }
 const { page } = Astro.props;
 const { Content } = await page.render();
+import Chat from "../components/Chat.jsx";
 ---
 
 <CustomersLayout frontmatter={page.data}>
   <Content />
+  <Chat client:load />
 </CustomersLayout>
