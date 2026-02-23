@@ -1,3 +1,7 @@
+---
+const url = Astro.url;
+const signupError = url.searchParams.get("error") === "1";
+---
 <div
   class="justify-center w-full mx-auto bg-gray-100/30 backdrop-blur-3xl border-b text-blue-950 text-xs font-semibold"
 >
@@ -164,7 +168,12 @@
           > with DerivaConnect</span
         >
       </p>
-      <form action="#" class="mt-12">
+      <form method="POST" action="/api/auth/signup" class="mt-12">
+        {signupError && (
+          <div class="mb-4 p-3 rounded-lg bg-red-50 text-red-700 text-xs font-medium">
+            Sign up failed. The email may already be in use.
+          </div>
+        )}
         <div class="flex-col flex gap-1 mt-8">
           <div class="col-span-full">
             <label for="first_name" class="sr-only">First name</label><input
@@ -207,9 +216,11 @@
             <input
               id="password"
               type="password"
-              placeholder="Your password "
-              aria-placeholder="Your password "
-              value="********"
+              name="password"
+              autocomplete="new-password"
+              placeholder="Your password"
+              aria-placeholder="Your password"
+              required
               class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
             />
           </div>

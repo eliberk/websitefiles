@@ -1,4 +1,8 @@
 ---
+const url = Astro.url;
+const success = url.searchParams.get("success") === "1";
+const error = url.searchParams.get("error") === "1";
+
 const features = [
   {
     icon: "sales",
@@ -127,9 +131,20 @@ const features = [
           </div>
         </div>
         <form
-          action="#"
+          method="POST"
+          action="/api/contact"
           class="bg-white p-8 rounded-3xl shadow-box shadow-gray-500/20"
         >
+          {success && (
+            <div class="mb-4 p-3 rounded-lg bg-green-50 text-green-700 text-xs font-medium">
+              Message sent! We'll be in touch soon.
+            </div>
+          )}
+          {error && (
+            <div class="mb-4 p-3 rounded-lg bg-red-50 text-red-700 text-xs font-medium">
+              Something went wrong. Please try again.
+            </div>
+          )}
           <div class="flex-col flex gap-1">
             <div class="w-full">
               <label for="first_name" class="sr-only">First name</label><input
@@ -159,9 +174,23 @@ const features = [
             <div>
               <label for="company_name" class="sr-only"> Company</label><input
                 id="company_name"
+                name="company_name"
                 type="text"
                 placeholder="Company name"
                 aria-placeholder="Company name"
+                class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-gray-100 border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
+              />
+            </div>
+            <div class="w-full">
+              <label for="email" class="sr-only">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="Your email"
+                aria-placeholder="Your email"
+                required
                 class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-gray-100 border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
               />
             </div>

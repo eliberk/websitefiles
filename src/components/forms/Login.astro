@@ -1,3 +1,8 @@
+---
+const url = Astro.url;
+const loginError = url.searchParams.get("error") === "1";
+const confirmEmail = url.searchParams.get("confirm") === "1";
+---
 <div
   class="justify-center w-full mx-auto bg-gray-100/30 backdrop-blur-3xl border-b text-blue-950 text-xs font-semibold"
 >
@@ -165,7 +170,17 @@
         >
       </p>
 
-      <form action="#" class="mt-12">
+      <form method="POST" action="/api/auth/login" class="mt-12">
+        {loginError && (
+          <div class="mb-4 p-3 rounded-lg bg-red-50 text-red-700 text-xs font-medium">
+            Invalid email or password. Please try again.
+          </div>
+        )}
+        {confirmEmail && (
+          <div class="mb-4 p-3 rounded-lg bg-blue-50 text-blue-700 text-xs font-medium">
+            Check your email to confirm your account, then sign in.
+          </div>
+        )}
         <div class="flex flex-row items-center gap-2 mt-10">
           <button
             type="button"
@@ -233,25 +248,27 @@
         </div>
         <div class="flex-col flex gap-1 mt-8">
           <div class="col-span-full">
-            <label for="first_name" class="sr-only">First name</label><input
-              id="first_name"
-              type="text"
-              name="first_name"
-              autocomplete="given-name"
-              placeholder="Your name"
-              aria-placeholder="Your name"
+            <label for="email" class="sr-only">Email</label><input
+              id="email"
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="Your email"
+              aria-placeholder="Your email"
               required
               class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
             />
           </div>
 
           <div class="col-span-full">
-            <label for="email" class="sr-only"> Email</label><input
-              id="email"
-              type="email"
-              placeholder="Your password "
-              aria-placeholder="Your password "
-              value="********"
+            <label for="password" class="sr-only">Password</label><input
+              id="password"
+              type="password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="Your password"
+              aria-placeholder="Your password"
+              required
               class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
             />
           </div>
