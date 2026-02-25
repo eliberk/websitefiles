@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(curl:*)",
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(npx vercel:*)"
+    ]
+  }
+}
